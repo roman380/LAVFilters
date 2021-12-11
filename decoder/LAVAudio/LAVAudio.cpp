@@ -191,7 +191,7 @@ HRESULT CLAVAudio::LoadDefaults()
     return S_OK;
 }
 
-static const WCHAR *bitstreamingCodecs[Bitstream_NB] = {L"ac3", L"eac3", L"truehd", L"dts", L"dtshd"};
+static const WCHAR *bitstreamingCodecs[Bitstream_NB] = {L"ac3", L"eac3", L"ac4", L"truehd", L"dts", L"dtshd"};
 
 static const WCHAR *sampleFormats[SampleFormat_Bitstream] = {L"s16", L"s24", L"s32", L"u8", L"fp32"};
 

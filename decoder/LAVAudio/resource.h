@@ -41,6 +41,7 @@
 #define IDC_BITSTREAMING                1061
 #define IDC_BS_AC3                      1062
 #define IDC_BS_EAC3                     1063
+#define IDC_BS_AC4                      1136
 #define IDC_BS_TRUEHD                   1064
 #define IDC_BS_DTS                      1065
 #define IDC_BS_DTSHD                    1066

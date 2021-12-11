@@ -34,6 +34,7 @@ static struct
 } lavf_bitstream_config[] = {
     {AV_CODEC_ID_AC3, Bitstream_AC3},
     {AV_CODEC_ID_EAC3, Bitstream_EAC3},
+    {AV_CODEC_ID_AC4, Bitstream_AC4},
     {AV_CODEC_ID_TRUEHD, Bitstream_TRUEHD},
     {AV_CODEC_ID_DTS, Bitstream_DTS} // DTS-HD is still DTS, and handled special below
 };
@@ -239,6 +240,10 @@ CMediaType CLAVAudio::CreateBitstreamMediaType(AVCodecID codec, DWORD dwSampleRa
         wfe->nSamplesPerSec = 192000;
         wfe->nChannels = 2;
         subtype = KSDATAFORMAT_SUBTYPE_IEC61937_DOLBY_DIGITAL_PLUS;
+        break;
+    case AV_CODEC_ID_AC4:
+        wfe->wFormatTag = WAVE_FORMAT_DOLBY_AC4;
+        wfe->nSamplesPerSec = min(dwSampleRate, 48000);
         break;
     case AV_CODEC_ID_TRUEHD:
         wfe->nSamplesPerSec = 192000;
