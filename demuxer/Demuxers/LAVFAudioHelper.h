@@ -59,6 +59,7 @@ const AVCodecTag mp_wav_tags[] = {
   { AV_CODEC_ID_WESTWOOD_SND1,     MKTAG('S', 'N', 'D', '1')},
   { AV_CODEC_ID_XAN_DPCM,          MKTAG('A', 'x', 'a', 'n')},
   { AV_CODEC_ID_MP4ALS,            MKTAG('A', 'L', 'S', ' ')},
+  { AV_CODEC_ID_AC4,               MKTAG('A', 'C', '-', '4')},
   { AV_CODEC_ID_NONE,              0}
 };
 // clang-format on
