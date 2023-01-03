@@ -35,6 +35,7 @@ CLAVFAudioHelper g_AudioHelper;
 // clang-format off
 static FormatMapping audio_map[] = {
   { AV_CODEC_ID_AC3,        &MEDIASUBTYPE_DOLBY_AC3,         WAVE_FORMAT_DOLBY_AC3,  nullptr },
+  { AV_CODEC_ID_AC4,        &MEDIASUBTYPE_DOLBY_AC4,         WAVE_FORMAT_DOLBY_AC4,  nullptr },
   { AV_CODEC_ID_AAC,        &MEDIASUBTYPE_AAC,               WAVE_FORMAT_AAC,        nullptr },
   { AV_CODEC_ID_AAC_LATM,   &MEDIASUBTYPE_LATM_AAC,          WAVE_FORMAT_LATM_AAC,   nullptr },
   { AV_CODEC_ID_DTS,        &MEDIASUBTYPE_WAVE_DTS,          0,                      nullptr },

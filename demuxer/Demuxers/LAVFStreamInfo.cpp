@@ -67,6 +67,14 @@ STDMETHODIMP CLAVFStreamInfo::CreateAudioMediaType(AVFormatContext *avctx, AVStr
                 avstream->codecpar->sample_rate = 48000;
         }
         else
+        if (avstream->codecpar->codec_id == AV_CODEC_ID_AC4) // Temporary, check out ffmpeg parsing/probing
+        {
+            if (!avstream->codecpar->channels)
+                avstream->codecpar->channels = 2;
+            if (!avstream->codecpar->sample_rate)
+                avstream->codecpar->sample_rate = 48000;
+        }
+        else
             return E_FAIL;
     }
 

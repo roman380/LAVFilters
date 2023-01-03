@@ -31,6 +31,7 @@ typedef enum LAVAudioCodec
 {
     Codec_AAC,
     Codec_AC3,
+    Codec_AC4,
     Codec_EAC3,
     Codec_DTS,
     Codec_MP2,
@@ -64,6 +65,7 @@ typedef enum LAVBitstreamCodec
 {
     Bitstream_AC3,
     Bitstream_EAC3,
+    Bitstream_AC4,
     Bitstream_TRUEHD,
     Bitstream_DTS,
     Bitstream_DTSHD,

@@ -2818,6 +2818,7 @@ static int audio_codec_priority(const AVCodecParameters *par)
         {
         case AV_CODEC_ID_EAC3: priority = 7; break;
         case AV_CODEC_ID_AC3:
+        case AV_CODEC_ID_AC4:
         case AV_CODEC_ID_AAC:
         case AV_CODEC_ID_AAC_LATM: priority = 5; break;
         case AV_CODEC_ID_MP3: priority = 3; break;

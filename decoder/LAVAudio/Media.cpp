@@ -56,6 +56,7 @@ static const FFMPEG_SUBTYPE_MAP lavc_audio_codecs[] = {
   { &MEDIASUBTYPE_DOLBY_DDPLUS_ARCSOFT, AV_CODEC_ID_EAC3 },
   { &MEDIASUBTYPE_DOLBY_TRUEHD, AV_CODEC_ID_TRUEHD   },
   { &MEDIASUBTYPE_WAVE_DOLBY_AC3, AV_CODEC_ID_AC3    },
+  { &MEDIASUBTYPE_DOLBY_AC4,    AV_CODEC_ID_AC4      },
 
   // DTS
   { &MEDIASUBTYPE_DTS,          AV_CODEC_ID_DTS      },
@@ -175,6 +176,7 @@ const AMOVIESETUP_MEDIATYPE CLAVAudio::sudPinTypesIn[] = {
   { &MEDIATYPE_Audio, &MEDIASUBTYPE_DOLBY_DDPLUS_ARCSOFT },
   { &MEDIATYPE_Audio, &MEDIASUBTYPE_DOLBY_TRUEHD },
   { &MEDIATYPE_Audio, &MEDIASUBTYPE_WAVE_DOLBY_AC3 },
+  { &MEDIATYPE_Audio, &MEDIASUBTYPE_DOLBY_AC4    },
 
   // DTS
   { &MEDIATYPE_Audio, &MEDIASUBTYPE_DTS          },
@@ -664,6 +666,7 @@ static codec_config_t m_codec_config[] = {
   { 2, { AV_CODEC_ID_AAC, AV_CODEC_ID_AAC_LATM }},       // CC_AAC
   { 1, { AV_CODEC_ID_AC3 }},                          // CC_AC3
   { 1, { AV_CODEC_ID_EAC3 }},                         // CC_EAC3
+  { 1, { AV_CODEC_ID_AC4 }},                          // CC_AC4
   { 1, { AV_CODEC_ID_DTS }, "dts", "DTS Coherent Acoustics (DTS, DTS-HD)"},                          // CC_DTS
   { 2, { AV_CODEC_ID_MP2, AV_CODEC_ID_MP1 }},            // CC_MP2
   { 1, { AV_CODEC_ID_MP3 }},                          // CC_MP3

@@ -69,6 +69,9 @@ HRESULT CLAVAudioSettingsProp::OnApplyChanges()
     bFlag = (BOOL)SendDlgItemMessage(m_Dlg, IDC_BS_EAC3, BM_GETCHECK, 0, 0);
     m_pAudioSettings->SetBitstreamConfig(Bitstream_EAC3, bFlag);
 
+    bFlag = (BOOL)SendDlgItemMessage(m_Dlg, IDC_BS_AC4, BM_GETCHECK, 0, 0);
+    m_pAudioSettings->SetBitstreamConfig(Bitstream_AC4, bFlag);
+
     bFlag = (BOOL)SendDlgItemMessage(m_Dlg, IDC_BS_TRUEHD, BM_GETCHECK, 0, 0);
     m_pAudioSettings->SetBitstreamConfig(Bitstream_TRUEHD, bFlag);
 
@@ -166,6 +169,7 @@ HRESULT CLAVAudioSettingsProp::OnActivate()
 
         SendDlgItemMessage(m_Dlg, IDC_BS_AC3, BM_SETCHECK, m_bBitstreaming[Bitstream_AC3], 0);
         SendDlgItemMessage(m_Dlg, IDC_BS_EAC3, BM_SETCHECK, m_bBitstreaming[Bitstream_EAC3], 0);
+        SendDlgItemMessage(m_Dlg, IDC_BS_AC4, BM_SETCHECK, m_bBitstreaming[Bitstream_AC4], 0);
         SendDlgItemMessage(m_Dlg, IDC_BS_TRUEHD, BM_SETCHECK, m_bBitstreaming[Bitstream_TRUEHD], 0);
         SendDlgItemMessage(m_Dlg, IDC_BS_DTS, BM_SETCHECK, m_bBitstreaming[Bitstream_DTS], 0);
         SendDlgItemMessage(m_Dlg, IDC_BS_DTSHD, BM_SETCHECK, m_bBitstreaming[Bitstream_DTSHD], 0);
@@ -276,6 +280,12 @@ INT_PTR CLAVAudioSettingsProp::OnReceiveMessage(HWND hwnd, UINT uMsg, WPARAM wPa
         {
             bool bFlag = SendDlgItemMessage(m_Dlg, LOWORD(wParam), BM_GETCHECK, 0, 0) != 0;
             if (bFlag != m_bBitstreaming[Bitstream_EAC3])
+                SetDirty();
+        }
+        else if (LOWORD(wParam) == IDC_BS_AC4 && HIWORD(wParam) == BN_CLICKED)
+        {
+            bool bFlag = SendDlgItemMessage(m_Dlg, LOWORD(wParam), BM_GETCHECK, 0, 0) != 0;
+            if (bFlag != m_bBitstreaming[Bitstream_AC4])
                 SetDirty();
         }
         else if (LOWORD(wParam) == IDC_BS_TRUEHD && HIWORD(wParam) == BN_CLICKED)
